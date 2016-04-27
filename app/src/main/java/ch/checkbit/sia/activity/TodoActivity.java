@@ -22,6 +22,7 @@ import java.util.List;
 
 import ch.checkbit.sia.R;
 import ch.checkbit.sia.db.SiaDbHelper;
+import ch.checkbit.sia.db.daos.TodoDAOV1;
 import ch.checkbit.sia.helpers.SiaConstants;
 import ch.checkbit.sia.helpers.Todo;
 
@@ -137,12 +138,12 @@ public class TodoActivity extends AppCompatActivity {
 
     }
 
-
+    private Todo.State state = Todo.State.ONGOING; // TODO: enable selecting the state filter in UI
 
     private List<Todo> getTODO() {
 
         SiaDbHelper dbHelper = new SiaDbHelper(getApplicationContext());
-        List<Todo> todo = dbHelper.getTodos(dbHelper.getReadableDatabase());
+        List<Todo> todo = dbHelper.getTodosByState(dbHelper.getReadableDatabase(), state);
 
         if (todo == null) {
             todo = new ArrayList<>();
