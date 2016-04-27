@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ch.checkbit.sia.activity.AddTodoActivity"
+    tools:showIn="@layout/activity_add_todo">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="fill_parent">
+
+        <!--desc-->
+        <EditText
+           android:id="@+id/task_description"
+           android:layout_height="wrap_content"
+           android:hint="your task"
+           android:inputType="text"
+           android:layout_width="fill_parent">
+       </EditText>
+
+       <Spinner
+           android:id="@+id/spinner_todo_types"
+           android:layout_height="wrap_content"
+           android:layout_width="fill_parent">
+      </Spinner>
+
+        <!--note-->
+        <EditText
+            android:id="@+id/task_notes"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:hint="note.."
+            android:lines="8">
+        </EditText>
+
+        <!--insert button-->
+        <Button
+            android:id="@+id/insert_todo"
+            android:layout_height="wrap_content"
+            android:text="Let's boogie!"
+            android:onClick="sendFeedback"
+            android:layout_width="fill_parent">
+        </Button>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

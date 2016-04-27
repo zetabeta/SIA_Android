@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SIA</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_charisma_quests">CharismaQuestsActivity</string>
+    <string name="title_activity_todo">TodoActivity</string>
+    <string name="title_activity_add_todo">AddTodoActivity</string>
+    <string name="title_activity_todo_detail">TodoDetailActivity</string>
+</resources>
