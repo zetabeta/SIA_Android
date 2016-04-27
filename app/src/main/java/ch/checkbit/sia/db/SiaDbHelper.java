@@ -56,19 +56,6 @@ public class SiaDbHelper extends SQLiteOpenHelper {
         return TodoDAOV1.createNew(db, desc, note, type);
     }
 
-    public List<Todo> getTodosByState(SQLiteDatabase db, Todo.State state) {
-
-        return TodoDAOV1.getAllTodos(db, state);
-    }
-
-    public void markTodoAsDone(SQLiteDatabase db, int todoId) {
-        TodoDAOV1.markAsDone(db, todoId);
-    }
-
-    public void deleteTodo(SQLiteDatabase db, int todoId) {
-        TodoDAOV1.delete(db, todoId);
-    }
-
 
     public List<Quest> getQuests(SQLiteDatabase db) {
         return QuestDAOV1.getAllQuests(db);
@@ -77,6 +64,18 @@ public class SiaDbHelper extends SQLiteOpenHelper {
 
     public Quest getQuestByTimestamp(SQLiteDatabase db, String lastActiveTimestamp) {
         return QuestDAOV1.getQuestByTimeStamp(db, lastActiveTimestamp);
+    }
+
+    public List<Todo> getTodos(SQLiteDatabase db) {
+        return TodoDAOV1.getAllTodos(db);
+    }
+
+    public void markTodoAsDone(SQLiteDatabase db, int todoId){
+        TodoDAOV1.markAsDone(db, todoId);
+    }
+
+    public void deleteTodo(SQLiteDatabase db, int todoId){
+        TodoDAOV1.delete(db, todoId);
     }
 
     public void updateLastActive(SQLiteDatabase db, long questId, String lastActive){

@@ -21,6 +21,4 @@ public class Todo{
         LONG_TERM,  // exclamation mark
         SHORT_TERM  // check
     }
-
-    public enum State {ONGOING, COMPLETED}
 }
