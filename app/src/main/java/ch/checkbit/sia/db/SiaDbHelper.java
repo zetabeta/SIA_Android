@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.List;
 
-import ch.checkbit.sia.db.businessEntities.QuestV1;
-import ch.checkbit.sia.db.businessEntities.TodoV1;
+import ch.checkbit.sia.db.daos.QuestDAOV1;
+import ch.checkbit.sia.db.daos.TodoDAOV1;
 import ch.checkbit.sia.helpers.CharismaQuests;
 import ch.checkbit.sia.helpers.Quest;
 import ch.checkbit.sia.helpers.Todo;
@@ -30,14 +30,14 @@ public class SiaDbHelper extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db) {
-        QuestV1.createTables(db);
-        TodoV1.createTables(db);
+        QuestDAOV1.createTables(db);
+        TodoDAOV1.createTables(db);
 
         initializeQuestsData(db);
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        QuestV1.deleteTables(db); // TODO: migrate data from older database version
-        TodoV1.deleteTables(db); // TODO: migrate data from older database version
+        QuestDAOV1.deleteTables(db); // TODO: migrate data from older database version
+        TodoDAOV1.deleteTables(db); // TODO: migrate data from older database version
 
         onCreate(db);
     }
@@ -47,39 +47,39 @@ public class SiaDbHelper extends SQLiteOpenHelper {
 
     private void initializeQuestsData(SQLiteDatabase db) {
         for (Quest q: CharismaQuests.getQuests()) {
-            QuestV1.insertCharismaQuest(db, q.questId, q.icon, q.title, q.description, q.info);
+            QuestDAOV1.insertCharismaQuest(db, q.questId, q.icon, q.title, q.description, q.info);
         }
     }
 
 
     public long insertTodo(SQLiteDatabase db, String desc, String note, Todo.Type type){
-        return TodoV1.createNew(db, desc, note, type);
+        return TodoDAOV1.createNew(db, desc, note, type);
     }
 
 
     public List<Quest> getQuests(SQLiteDatabase db) {
-        return QuestV1.getAllQuests(db);
+        return QuestDAOV1.getAllQuests(db);
     }
 
 
     public Quest getQuestByTimestamp(SQLiteDatabase db, String lastActiveTimestamp) {
-        return QuestV1.getQuestByTimeStamp(db, lastActiveTimestamp);
+        return QuestDAOV1.getQuestByTimeStamp(db, lastActiveTimestamp);
     }
 
     public List<Todo> getTodos(SQLiteDatabase db) {
-        return TodoV1.getAllTodos(db);
+        return TodoDAOV1.getAllTodos(db);
     }
 
     public void markTodoAsDone(SQLiteDatabase db, int todoId){
-        TodoV1.markAsDone(db, todoId);
+        TodoDAOV1.markAsDone(db, todoId);
     }
 
     public void deleteTodo(SQLiteDatabase db, int todoId){
-        TodoV1.delete(db, todoId);
+        TodoDAOV1.delete(db, todoId);
     }
 
     public void updateLastActive(SQLiteDatabase db, long questId, String lastActive){
-        QuestV1.upLastActive(db, questId, lastActive);
+        QuestDAOV1.upLastActive(db, questId, lastActive);
     }
 
 }

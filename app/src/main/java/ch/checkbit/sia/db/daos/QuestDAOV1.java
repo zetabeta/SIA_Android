@@ -1,4 +1,4 @@
-package ch.checkbit.sia.db.businessEntities;
+package ch.checkbit.sia.db.daos;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -13,7 +13,7 @@ import ch.checkbit.sia.helpers.Quest;
 /**
  * Created by raymoon on 4/27/16.
  */
-public class QuestV1 {
+public class QuestDAOV1 {
 
     public static final String TIMESTAMP_PATTERN = "yyyy-MM-DD HH:mm:ss.SSS";
 
