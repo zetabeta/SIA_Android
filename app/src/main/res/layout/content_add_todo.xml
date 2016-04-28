@@ -40,7 +40,7 @@
             android:inputType="textMultiLine"
             android:gravity="top"
             android:hint="note.."
-            android:lines="8">
+            android:lines="3">
         </EditText>
 
         <!--insert button-->
