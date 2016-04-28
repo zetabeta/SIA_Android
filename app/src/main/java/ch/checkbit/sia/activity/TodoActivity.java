@@ -13,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ import java.util.List;
 
 import ch.checkbit.sia.R;
 import ch.checkbit.sia.db.SiaDbHelper;
+import ch.checkbit.sia.db.daos.TodoDAOV1;
 import ch.checkbit.sia.helpers.SiaConstants;
 import ch.checkbit.sia.helpers.Todo;
 
@@ -32,6 +35,17 @@ public class TodoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
         setupToolbar();
+
+
+        Switch modeSwitch = (Switch) findViewById(R.id.todo_archive_mode);
+        modeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                state = (b ? Todo.State.COMPLETED : Todo.State.ONGOING);
+                loadTODO();
+            }
+        });
 
         loadTODO();
 
@@ -137,12 +151,12 @@ public class TodoActivity extends AppCompatActivity {
 
     }
 
-
+    private Todo.State state = Todo.State.ONGOING;
 
     private List<Todo> getTODO() {
 
         SiaDbHelper dbHelper = new SiaDbHelper(getApplicationContext());
-        List<Todo> todo = dbHelper.getTodos(dbHelper.getReadableDatabase());
+        List<Todo> todo = dbHelper.getTodosByState(dbHelper.getReadableDatabase(), state);
 
         if (todo == null) {
             todo = new ArrayList<>();

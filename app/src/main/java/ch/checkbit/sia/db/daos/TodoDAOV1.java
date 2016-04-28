@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+import android.support.annotation.NonNull;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,6 +19,7 @@ import ch.checkbit.sia.helpers.Todo;
  * Created by raymoon on 4/27/16.
  */
 public class TodoDAOV1 extends AbstractDAO {
+
 
     public static abstract class Todos implements BaseColumns {
         public static final String TABLE_NAME = "TODO";
@@ -82,21 +84,33 @@ public class TodoDAOV1 extends AbstractDAO {
                 values);
     }
 
-    public static List<Todo> getAllTodos(SQLiteDatabase db) {
+    public static List<Todo> getAllTodos(SQLiteDatabase db, Todo.State state) {
 
-        List<Todo> todoList = new ArrayList<>();
         String sortOrder = Todos._ID + " ASC";
 
-        Cursor c = db.query(
-                Todos.TABLE_NAME,          // The table to query
-                TODO_PROJECTION,                      // The columns to return
-                null,                                 // The columns for the WHERE clause
-                null,                                 // The values for the WHERE clause
-                null,                                 // don't group the rows
-                null,                                 // don't filter by row groups
-                sortOrder                             // The sort order
+        Cursor c = db.rawQuery("select " + getFields() + " from " + Todos.TABLE_NAME + " WHERE " + (Todo.State.COMPLETED.equals(state) ? "NOT" : "") + " " + Todos.COLUMN_NAME_TODO_DONE_DATE + " is NULL ", new String[]{}
         );
 
+        return extractResults(c);
+    }
+
+    private static String getFields() {
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < TODO_PROJECTION.length; i++) {
+            if (i > 0) {
+                builder.append(", ");
+            }
+            builder.append(TODO_PROJECTION[i]);
+        }
+
+        return builder.toString();
+
+    }
+
+    @NonNull
+    private static List<Todo> extractResults(Cursor c) {
+        List<Todo> todoList = new ArrayList<>();
         if (c != null) {
             c.moveToFirst();
             int count = c.getCount();
@@ -108,10 +122,8 @@ public class TodoDAOV1 extends AbstractDAO {
             }
             c.close();
         }
-
         return todoList;
     }
-
 
     private static Todo todoFromCursor(Cursor c) {
         SimpleDateFormat sdf = new SimpleDateFormat(TIMESTAMP_PATTERN, Locale.getDefault());
