@@ -86,7 +86,7 @@ public class TodoDetailActivity extends AppCompatActivity {
         if(includeMarkAsDoneButton) {
             /** delete button **/
             Button deleteButton = new Button(this);
-            deleteButton.setText("Delete");
+            deleteButton.setText(R.string.delete);
             buttonsLayout.addView(deleteButton);
 
             deleteButton.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +99,7 @@ public class TodoDetailActivity extends AppCompatActivity {
 
             /** done button **/
             Button markAsDone = new Button(this);
-            markAsDone.setText("It's DONE!");
+            markAsDone.setText(R.string.mark_as_done);
             buttonsLayout.addView(markAsDone);
 
             markAsDone.setOnClickListener(new View.OnClickListener() {

@@ -21,7 +21,7 @@
         <EditText
            android:id="@+id/task_description"
            android:layout_height="wrap_content"
-           android:hint="your task"
+           android:hint="@string/your_task_hint"
            android:inputType="text"
            android:layout_width="fill_parent">
        </EditText>
@@ -39,7 +39,7 @@
             android:layout_width="fill_parent"
             android:inputType="textMultiLine"
             android:gravity="top"
-            android:hint="note.."
+            android:hint="@string/note_hint"
             android:lines="3">
         </EditText>
 
@@ -47,7 +47,7 @@
         <Button
             android:id="@+id/insert_todo"
             android:layout_height="wrap_content"
-            android:text="Let's boogie!"
+            android:text="@string/add_todo_button"
             android:onClick="sendFeedback"
             android:layout_width="fill_parent">
         </Button>

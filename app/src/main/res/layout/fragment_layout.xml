@@ -9,41 +9,41 @@
         android:id="@+id/btn_charisma_quests"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/dashboard_btn_charisma_quests"
-        android:text="Charisma Quests" />
+        android:text="@string/dashboard_btn_charisma_quests" />
 
     <!--  Voice Exercises Button -->
     <Button
         android:id="@+id/btn_voice_exercises"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/dashboard_btn_under_construction"
-        android:text="Voice Exercises" />
+        android:text="@string/dashboard_btn_voice_exercises" />
 
     <!--  To do List -->
     <Button
         android:id="@+id/btn_todos"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/dashboard_btn_todo"
-        android:text="TODOs" />
+        android:text="@string/dashboard_btn_todos" />
 
     <!--  daily tasks -->
     <Button
         android:id="@+id/btn_daily_tasks"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/dashboard_btn_under_construction"
-        android:text="Daily Tasks" />
+        android:text="@string/dashboard_btn_daily_tasks" />
 
     <!--  superpowers -->
     <Button
         android:id="@+id/btn_superpowers"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/dashboard_btn_under_construction"
-        android:text="Superpowers" />
+        android:text="@string/dashboard_btn_superpowers" />
 
     <!--  future -->
     <Button
         android:id="@+id/btn_future"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/dashboard_btn_under_construction"
-        android:text="Future" />
+        android:text="@string/dashboard_btn_future" />
 
 </ch.checkbit.sia.layout.DashboardLayout>

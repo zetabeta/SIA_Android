@@ -15,7 +15,7 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="archive mode"
+        android:text="@string/archive_mode"
         android:layout_gravity="top"
         android:textSize="16dp"
         android:id="@+id/todo_archive_mode" />

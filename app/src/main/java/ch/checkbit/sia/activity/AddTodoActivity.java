@@ -64,7 +64,7 @@ public class AddTodoActivity extends AppCompatActivity {
         toolbar.setTitle("");
         TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.add_todo_title);
         toolbarTitle.setTypeface(SIA_FONT);
-        toolbar.setLogo(R.drawable.btn_todo);
+        toolbar.setLogo(R.drawable.btn_todo_sml);
         setSupportActionBar(toolbar);
     }
 

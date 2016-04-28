@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/todo_detail_type_icon"
-                android:text="Description"
+                android:text="@string/description"
                 android:textSize="24dp" />
 
         </android.support.v7.widget.LinearLayoutCompat>
@@ -72,7 +72,7 @@
             android:id="@+id/todo_detail_notes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notes come here..."
+            android:text="@string/notes_here"
             android:textSize="14sp" />
 
         <android.support.v7.widget.LinearLayoutCompat

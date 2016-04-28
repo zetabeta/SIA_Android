@@ -105,7 +105,7 @@ public class CharismaQuestsActivity extends AppCompatActivity {
         toolbar.setTitle("");
         TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.charisma_quest_title);
         toolbarTitle.setTypeface(SIA_FONT);
-        toolbar.setLogo(R.drawable.btn_charisma_quests);
+        toolbar.setLogo(R.drawable.btn_charisma_quests_sml);
         setSupportActionBar(toolbar);
     }
 

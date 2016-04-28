@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="QUEST"
+                android:text="@string/charisma_quest_title"
                 android:layout_gravity="center"
                 android:textSize="20dp"
                 android:id="@+id/charisma_quest_title" />
