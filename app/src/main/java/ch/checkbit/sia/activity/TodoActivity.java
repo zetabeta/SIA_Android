@@ -36,6 +36,17 @@ public class TodoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_todo);
         setupToolbar();
 
+
+        Switch modeSwitch = (Switch) findViewById(R.id.todo_archive_mode);
+        modeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                state = (b ? Todo.State.COMPLETED : Todo.State.ONGOING);
+                loadTODO();
+            }
+        });
+
         loadTODO();
 
         FloatingActionButton add = (FloatingActionButton) findViewById(R.id.add_todo);
@@ -93,16 +104,6 @@ public class TodoActivity extends AppCompatActivity {
         toolbarTitle.setTypeface(SIA_FONT);
         toolbar.setLogo(R.drawable.btn_todo);
         setSupportActionBar(toolbar);
-
-        Switch modeSwitch = (Switch) toolbar.findViewById(R.id.todo_archive_mode);
-        modeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
-                state = (b ? Todo.State.COMPLETED : Todo.State.ONGOING);
-                loadTODO();
-            }
-        });
     }
 
 
@@ -150,7 +151,7 @@ public class TodoActivity extends AppCompatActivity {
 
     }
 
-    private Todo.State state = Todo.State.ONGOING; // TODO: enable selecting the state filter in UI
+    private Todo.State state = Todo.State.ONGOING;
 
     private List<Todo> getTODO() {
 

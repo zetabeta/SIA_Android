@@ -27,14 +27,6 @@
                 android:textSize="20dp"
                 android:id="@+id/todo_title" />
 
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="archive mode"
-                android:layout_gravity="right"
-                android:textSize="16dp"
-                android:id="@+id/todo_archive_mode" />
-
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>

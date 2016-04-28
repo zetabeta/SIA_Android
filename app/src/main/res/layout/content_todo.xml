@@ -12,11 +12,19 @@
     tools:context="ch.checkbit.sia.activity.TodoActivity"
     tools:showIn="@layout/activity_todo">
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="archive mode"
+        android:layout_gravity="top"
+        android:textSize="16dp"
+        android:id="@+id/todo_archive_mode" />
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60px"
         />
 
 </RelativeLayout>
