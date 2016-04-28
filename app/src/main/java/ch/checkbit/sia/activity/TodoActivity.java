@@ -13,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -91,6 +93,16 @@ public class TodoActivity extends AppCompatActivity {
         toolbarTitle.setTypeface(SIA_FONT);
         toolbar.setLogo(R.drawable.btn_todo);
         setSupportActionBar(toolbar);
+
+        Switch modeSwitch = (Switch) toolbar.findViewById(R.id.todo_archive_mode);
+        modeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                state = (b ? Todo.State.COMPLETED : Todo.State.ONGOING);
+                loadTODO();
+            }
+        });
     }
 
 
