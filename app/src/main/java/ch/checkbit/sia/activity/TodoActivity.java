@@ -25,12 +25,12 @@ import ch.checkbit.sia.helpers.Todo;
 
 public class TodoActivity extends SiaAbstractActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
         setupToolbar(getAssets(), R.id.todo_toolbar, R.id.todo_title, R.drawable.btn_todo_sml );
-
 
         Switch modeSwitch = (Switch) findViewById(R.id.todo_archive_mode);
         modeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

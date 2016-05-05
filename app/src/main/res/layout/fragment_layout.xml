@@ -4,19 +4,6 @@
     android:layout_height="fill_parent"
     android:layout_weight="1"
     android:background="#ffffff" >
-    <!--  Charisma Quests Button -->
-    <Button
-        android:id="@+id/btn_charisma_quests"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/dashboard_btn_charisma_quests"
-        android:text="@string/dashboard_btn_charisma_quests" />
-
-    <!--  Voice Exercises Button -->
-    <Button
-        android:id="@+id/btn_voice_exercises"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/dashboard_btn_under_construction"
-        android:text="@string/dashboard_btn_voice_exercises" />
 
     <!--  To do List -->
     <Button
@@ -31,6 +18,20 @@
         style="@style/DashboardButton"
         android:drawableTop="@drawable/dashboard_btn_daily_tasks"
         android:text="@string/dashboard_btn_daily_tasks" />
+
+    <!--  Charisma Quests Button -->
+    <Button
+        android:id="@+id/btn_charisma_quests"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/dashboard_btn_charisma_quests"
+        android:text="@string/dashboard_btn_charisma_quests" />
+
+    <!--  Voice Exercises Button -->
+    <Button
+        android:id="@+id/btn_voice_exercises"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/dashboard_btn_under_construction"
+        android:text="@string/dashboard_btn_voice_exercises" />
 
     <!-- Superpowers -->
     <Button

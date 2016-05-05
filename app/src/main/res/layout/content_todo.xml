@@ -16,15 +16,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/archive_mode"
+        android:minWidth="200dp"
         android:layout_gravity="top"
-        android:textSize="16dp"
-        android:id="@+id/todo_archive_mode" />
+        android:layout_alignParentRight="true"
+        android:textSize="16sp"
+        android:id="@+id/todo_archive_mode"
+        android:textColor="@color/colorAccent"
+        android:padding="10dp"
+        android:nestedScrollingEnabled="false"
+        android:textOff="@string/archive_mode_off"
+        android:textOn="@string/archive_mode_on" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/divider"
+        android:layout_below="@+id/todo_archive_mode"
+        android:layout_height="1dip"
+        android:background="@color/colorPrimary" />
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60px"
+        android:layout_marginTop="10px"
+        android:layout_below="@+id/divider"
         />
 
 </RelativeLayout>

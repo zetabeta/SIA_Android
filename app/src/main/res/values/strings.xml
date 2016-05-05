@@ -16,7 +16,9 @@
     <string name="add_todo_button">Let\'s boogie!</string>
     <string name="loading">Loading ....</string>
     <string name="description">Description</string>
-    <string name="archive_mode">archive mode</string>
+    <string name="archive_mode_on">ON</string>
+    <string name="archive_mode_off">OFF</string>
+    <string name="archive_mode">archive view</string>
     <string name="notes_here">Notes come here...</string>
 
 

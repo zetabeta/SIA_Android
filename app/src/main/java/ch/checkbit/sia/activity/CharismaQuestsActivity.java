@@ -1,7 +1,6 @@
 package ch.checkbit.sia.activity;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,7 +17,6 @@ import java.util.Random;
 import ch.checkbit.sia.R;
 import ch.checkbit.sia.db.SiaDbHelper;
 import ch.checkbit.sia.helpers.Quest;
-import ch.checkbit.sia.helpers.SiaConstants;
 
 public class CharismaQuestsActivity extends SiaAbstractActivity {
 
@@ -61,16 +59,12 @@ public class CharismaQuestsActivity extends SiaAbstractActivity {
 
     private void drawCurrentQuest( final Quest quest) {
 
-        final Typeface SIA_FONT_TXT = Typeface.createFromAsset(getAssets(), SiaConstants.FONT_TEXT);
-
          /* quest title */
         TextView titleView = (TextView) findViewById(R.id.quest_title);
-        titleView.setTypeface(SIA_FONT_TXT);
         titleView.setText(quest.title);
 
          /* quest text */
         TextView questView = (TextView) findViewById(R.id.charisma_quest);
-        questView.setTypeface(SIA_FONT_TXT);
         questView.setText(quest.description);
 
         /* quest icon */

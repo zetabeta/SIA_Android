@@ -18,28 +18,8 @@ public class SiaDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sia_dashboard);
 
-        final Typeface SIA_FONT = Typeface.createFromAsset(getAssets(), "fonts/Lenka.ttf");
-
-        /* Charisma quests */
-        Button btnCharismaQuests = (Button) findViewById(R.id.btn_charisma_quests);
-        btnCharismaQuests.setTypeface(SIA_FONT);
-
-        btnCharismaQuests.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CharismaQuestsActivity.class);
-                startActivity(i);
-            }
-        });
-
-
-        /* Voice exercises */
-        Button btnVoiceExercises = (Button) findViewById(R.id.btn_voice_exercises);
-        btnVoiceExercises.setTypeface(SIA_FONT);
-
-        /* TODOs */
+            /* TODOs */
         Button btnTodos = (Button) findViewById(R.id.btn_todos);
-        btnTodos.setTypeface(SIA_FONT);
 
         btnTodos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +31,6 @@ public class SiaDashboardActivity extends AppCompatActivity {
 
         /* Daily tasks */
         Button btnDailyTasks = (Button) findViewById(R.id.btn_daily_tasks);
-        btnDailyTasks.setTypeface(SIA_FONT);
 
         btnDailyTasks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,13 +40,25 @@ public class SiaDashboardActivity extends AppCompatActivity {
             }
         });
 
+        /* Charisma quests */
+        Button btnCharismaQuests = (Button) findViewById(R.id.btn_charisma_quests);
+
+        btnCharismaQuests.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), CharismaQuestsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        /* Voice exercises */
+        Button btnVoiceExercises = (Button) findViewById(R.id.btn_voice_exercises);
+
         /* Future */
         Button btnFuture = (Button) findViewById(R.id.btn_future);
-        btnFuture.setTypeface(SIA_FONT);
 
         /* Superpowers */
         Button btnSuperpowers = (Button) findViewById(R.id.btn_superpowers);
-        btnSuperpowers.setTypeface(SIA_FONT);
 
     }
 
