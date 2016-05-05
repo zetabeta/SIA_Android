@@ -5,12 +5,12 @@
     <string name="title_activity_todo">TodoActivity</string>
     <string name="title_activity_add_todo">AddTodoActivity</string>
     <string name="title_activity_todo_detail">TodoDetailActivity</string>
+    <string name="title_activity_daily_tasks">DailyTasksActivity</string>
 
-    <string name="mark_as_done">"It's DONE!"</string>
+    <string name="mark_as_done">It\'s DONE!</string>
     <string name="delete">Delete</string>
-    <string name="add_new_todo">Add new TODO</string>
-    <string name="charisma_quest_title">QUEST</string>
-    <string name="todos_title">TODOs</string>
+    <string name="add_new_todo">Add New TODO</string>
+    <string name="todo_detail_title">TODO Detail</string>
     <string name="your_task_hint">your task</string>
     <string name="note_hint">note..</string>
     <string name="add_todo_button">Let\'s boogie!</string>
@@ -20,13 +20,12 @@
     <string name="notes_here">Notes come here...</string>
 
 
+
     <string name="dashboard_btn_charisma_quests">Charisma Quests</string>
     <string name="dashboard_btn_todos">TODOs</string>
     <string name="dashboard_btn_voice_exercises">Voice Exercises</string>
     <string name="dashboard_btn_daily_tasks">Daily Tasks</string>
     <string name="dashboard_btn_superpowers">Superpowers</string>
     <string name="dashboard_btn_future">Future</string>
-
-
 
 </resources>

@@ -25,21 +25,21 @@
         android:drawableTop="@drawable/dashboard_btn_todo"
         android:text="@string/dashboard_btn_todos" />
 
-    <!--  daily tasks -->
+    <!--  Daily tasks -->
     <Button
         android:id="@+id/btn_daily_tasks"
         style="@style/DashboardButton"
-        android:drawableTop="@drawable/dashboard_btn_under_construction"
+        android:drawableTop="@drawable/dashboard_btn_daily_tasks"
         android:text="@string/dashboard_btn_daily_tasks" />
 
-    <!--  superpowers -->
+    <!-- Superpowers -->
     <Button
         android:id="@+id/btn_superpowers"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/dashboard_btn_under_construction"
         android:text="@string/dashboard_btn_superpowers" />
 
-    <!--  future -->
+    <!-- Future -->
     <Button
         android:id="@+id/btn_future"
         style="@style/DashboardButton"

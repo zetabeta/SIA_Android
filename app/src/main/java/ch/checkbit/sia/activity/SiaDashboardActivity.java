@@ -49,10 +49,17 @@ public class SiaDashboardActivity extends AppCompatActivity {
             }
         });
 
-
         /* Daily tasks */
         Button btnDailyTasks = (Button) findViewById(R.id.btn_daily_tasks);
         btnDailyTasks.setTypeface(SIA_FONT);
+
+        btnDailyTasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), DailyTasksActivity.class);
+                startActivity(i);
+            }
+        });
 
         /* Future */
         Button btnFuture = (Button) findViewById(R.id.btn_future);

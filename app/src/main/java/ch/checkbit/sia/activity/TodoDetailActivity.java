@@ -1,5 +1,6 @@
 package ch.checkbit.sia.activity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import ch.checkbit.sia.R;
 import ch.checkbit.sia.db.SiaDbHelper;
+import ch.checkbit.sia.helpers.SiaConstants;
 import ch.checkbit.sia.helpers.Todo;
 
 public class TodoDetailActivity extends AppCompatActivity {
@@ -20,8 +22,7 @@ public class TodoDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo_detail);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setupToolbar();
 
         Bundle bundle = getIntent().getExtras();
         final Integer id = bundle.getInt("id");
@@ -109,9 +110,21 @@ public class TodoDetailActivity extends AppCompatActivity {
                     finish();
                 }
             });
-
         }
 
+    }
+
+    private void setupToolbar() {
+         /* font */
+        final Typeface SIA_FONT = Typeface.createFromAsset(getAssets(), SiaConstants.FONT_HANDWRITTEN);
+
+        /* toolbar */
+        Toolbar toolbar = (Toolbar) findViewById(R.id.todo_detail_toolbar);
+        toolbar.setTitle("");
+        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.todo_detail_title);
+        toolbarTitle.setTypeface(SIA_FONT);
+        toolbar.setLogo(R.drawable.btn_todo_sml);
+        setSupportActionBar(toolbar);
     }
 
 }

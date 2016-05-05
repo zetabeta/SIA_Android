@@ -98,7 +98,7 @@ public class TodoActivity extends AppCompatActivity {
         final Typeface SIA_FONT = Typeface.createFromAsset(getAssets(), SiaConstants.FONT_HANDWRITTEN);
 
         /* toolbar */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.todo_toolbar);
         toolbar.setTitle("");
         TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.todo_title);
         toolbarTitle.setTypeface(SIA_FONT);
