@@ -1,10 +1,7 @@
 package ch.checkbit.sia.activity;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,16 +10,15 @@ import android.widget.TextView;
 
 import ch.checkbit.sia.R;
 import ch.checkbit.sia.db.SiaDbHelper;
-import ch.checkbit.sia.helpers.SiaConstants;
 import ch.checkbit.sia.helpers.Todo;
 
-public class TodoDetailActivity extends AppCompatActivity {
+public class TodoDetailActivity extends SiaAbstractActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo_detail);
-        setupToolbar();
+        setupToolbar(getAssets(), R.id.todo_detail_toolbar, R.id.todo_detail_title,R.drawable.btn_todo_sml);
 
         Bundle bundle = getIntent().getExtras();
         final Integer id = bundle.getInt("id");
@@ -66,22 +62,6 @@ public class TodoDetailActivity extends AppCompatActivity {
 
         boolean includeMarkAsDoneButton = !done;
 
-        /** done **/
-        if(done != null && done) {
-            //ImageView doneImage = new ImageView(this);
-            //doneImage.setImageDrawable(getDrawable(R.drawable.));
-            //buttonsLayout.addView(doneImage);
-
-            /** done date **/
-            if(doneDate != null) {
-                //TextView doneAt = new TextView(this);
-                //doneAt.setText(doneDate);
-                //doneAt.setTextSize(16);
-                //buttonsLayout.addView(doneAt);
-            }
-        }
-
-
         final SiaDbHelper dbHelper = new SiaDbHelper(this);
 
         if(includeMarkAsDoneButton) {
@@ -112,19 +92,6 @@ public class TodoDetailActivity extends AppCompatActivity {
             });
         }
 
-    }
-
-    private void setupToolbar() {
-         /* font */
-        final Typeface SIA_FONT = Typeface.createFromAsset(getAssets(), SiaConstants.FONT_HANDWRITTEN);
-
-        /* toolbar */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.todo_detail_toolbar);
-        toolbar.setTitle("");
-        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.todo_detail_title);
-        toolbarTitle.setTypeface(SIA_FONT);
-        toolbar.setLogo(R.drawable.btn_todo_sml);
-        setSupportActionBar(toolbar);
     }
 
 }

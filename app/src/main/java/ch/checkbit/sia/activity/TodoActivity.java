@@ -2,12 +2,9 @@ package ch.checkbit.sia.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatCheckBox;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,17 +21,15 @@ import java.util.List;
 
 import ch.checkbit.sia.R;
 import ch.checkbit.sia.db.SiaDbHelper;
-import ch.checkbit.sia.db.daos.TodoDAOV1;
-import ch.checkbit.sia.helpers.SiaConstants;
 import ch.checkbit.sia.helpers.Todo;
 
-public class TodoActivity extends AppCompatActivity {
+public class TodoActivity extends SiaAbstractActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
-        setupToolbar();
+        setupToolbar(getAssets(), R.id.todo_toolbar, R.id.todo_title, R.drawable.btn_todo_sml );
 
 
         Switch modeSwitch = (Switch) findViewById(R.id.todo_archive_mode);
@@ -91,21 +86,6 @@ public class TodoActivity extends AppCompatActivity {
 
         });
     }
-
-
-    private void setupToolbar() {
-         /* font */
-        final Typeface SIA_FONT = Typeface.createFromAsset(getAssets(), SiaConstants.FONT_HANDWRITTEN);
-
-        /* toolbar */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.todo_toolbar);
-        toolbar.setTitle("");
-        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.todo_title);
-        toolbarTitle.setTypeface(SIA_FONT);
-        toolbar.setLogo(R.drawable.btn_todo_sml);
-        setSupportActionBar(toolbar);
-    }
-
 
     public class TodoAdapter extends ArrayAdapter<Todo> {
         private final Context context;

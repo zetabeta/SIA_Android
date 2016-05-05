@@ -1,10 +1,7 @@
 package ch.checkbit.sia.activity;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +10,21 @@ import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import ch.checkbit.sia.R;
 import ch.checkbit.sia.db.SiaDbHelper;
-import ch.checkbit.sia.helpers.SiaConstants;
 import ch.checkbit.sia.helpers.Todo;
 
-public class AddTodoActivity extends AppCompatActivity {
+/**
+ * Activity to add new TODO entity
+ */
+public class AddTodoActivity extends SiaAbstractActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_todo);
-        setupToolbar();
+        setupToolbar(getAssets(), R.id.add_todo_toolbar, R.id.add_todo_title, R.drawable.btn_todo_sml);
 
         final SiaDbHelper dbHelper = new SiaDbHelper(getApplicationContext());
 
@@ -41,7 +39,6 @@ public class AddTodoActivity extends AppCompatActivity {
         /** add button listener to add the new entry **/
         Button insertButton = (Button) findViewById(R.id.insert_todo);
 
-
         insertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,19 +50,6 @@ public class AddTodoActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void setupToolbar() {
-         /* font */
-        final Typeface SIA_FONT = Typeface.createFromAsset(getAssets(), SiaConstants.FONT_HANDWRITTEN);
-
-        /* toolbar */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.add_todo_toolbar);
-        toolbar.setTitle("");
-        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.add_todo_title);
-        toolbarTitle.setTypeface(SIA_FONT);
-        toolbar.setLogo(R.drawable.btn_todo_sml);
-        setSupportActionBar(toolbar);
     }
 
 

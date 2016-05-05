@@ -24,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/add_new_todo"
                 android:layout_gravity="center"
-                android:textSize="20dp"
                 android:id="@+id/add_todo_title" />
 
         </android.support.v7.widget.Toolbar>

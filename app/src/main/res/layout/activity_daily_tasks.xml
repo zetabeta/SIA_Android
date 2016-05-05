@@ -24,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dashboard_btn_daily_tasks"
                 android:layout_gravity="center"
-                android:textSize="20dp"
                 android:id="@+id/daily_tasks_title" />
 
         </android.support.v7.widget.Toolbar>

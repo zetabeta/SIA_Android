@@ -51,8 +51,7 @@
             android:onClick="sendFeedback"
             android:layout_width="fill_parent">
         </Button>
-
-
+        
     </LinearLayout>
 
 

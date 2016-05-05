@@ -5,8 +5,6 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,7 +20,7 @@ import ch.checkbit.sia.db.SiaDbHelper;
 import ch.checkbit.sia.helpers.Quest;
 import ch.checkbit.sia.helpers.SiaConstants;
 
-public class CharismaQuestsActivity extends AppCompatActivity {
+public class CharismaQuestsActivity extends SiaAbstractActivity {
 
     public static final String TIMESTAMP_FORMAT = "yyyyMMdd";
 
@@ -30,13 +28,11 @@ public class CharismaQuestsActivity extends AppCompatActivity {
     private SiaDbHelper dbHelper;
     private String timestamp;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charisma_quests);
-        setupToolbar();
-
+        setupToolbar(getAssets(), R.id.charisma_quests_toolbar, R.id.charisma_quests_title, R.drawable.btn_charisma_quests_sml);
 
         dbHelper = new SiaDbHelper(getApplicationContext());
 
@@ -94,19 +90,6 @@ public class CharismaQuestsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void setupToolbar() {
-         /* font */
-        final Typeface SIA_FONT = Typeface.createFromAsset(getAssets(), SiaConstants.FONT_HANDWRITTEN);
-
-        /* toolbar */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
-        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.charisma_quest_title);
-        toolbarTitle.setTypeface(SIA_FONT);
-        toolbar.setLogo(R.drawable.btn_charisma_quests_sml);
-        setSupportActionBar(toolbar);
     }
 
 
