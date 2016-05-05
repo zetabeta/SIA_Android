@@ -8,11 +8,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import ch.checkbit.sia.R;
 import ch.checkbit.sia.db.SiaDbHelper;
+import ch.checkbit.sia.db.daos.TodoDAOV1;
 import ch.checkbit.sia.helpers.Todo;
 
 public class TodoDetailActivity extends SiaAbstractActivity {
+
+    public static final String TIMESTAMP_PATTERN = "yyyy-MM-DD HH:mm";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +51,10 @@ public class TodoDetailActivity extends SiaAbstractActivity {
         /** desc **/
         if(desc != null){
             TextView description = (TextView) findViewById(R.id.todo_detail_desc);
-            description.setText(desc);
+            description.setText(desc.toUpperCase());
         }
 
-        /** desc **/
+        /** notes **/
         if(note != null){
             TextView notes = (TextView) findViewById(R.id.todo_detail_notes);
             notes.setText(note);
@@ -55,7 +63,17 @@ public class TodoDetailActivity extends SiaAbstractActivity {
         /** create date **/
         if(note != null){
             TextView creationDate = (TextView) findViewById(R.id.todo_detail_create_date);
-            creationDate.setText(createDate);
+            SimpleDateFormat sdfDB = new SimpleDateFormat(TodoDAOV1.TIMESTAMP_PATTERN);
+            String createDateFormatted = null;
+            try {
+                // TODO this does not work, see why
+                Date parsed = sdfDB.parse(createDate);
+                SimpleDateFormat sdf = new SimpleDateFormat(TIMESTAMP_PATTERN, Locale.getDefault());
+                createDateFormatted = sdf.format(parsed);
+                creationDate.setText(createDateFormatted);
+            } catch (ParseException e) {
+                creationDate.setText(createDate);
+            }
         }
 
         LinearLayoutCompat buttonsLayout = (LinearLayoutCompat) findViewById(R.id.todo_detail_buttons_layout);

@@ -20,11 +20,11 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:theme="@style/ToolbarText"
                 android:text="@string/dashboard_btn_charisma_quests"
-                android:layout_gravity="center"
-                android:id="@+id/charisma_quests_title" />
+                android:id="@+id/charisma_quests_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
         </android.support.v7.widget.Toolbar>
 

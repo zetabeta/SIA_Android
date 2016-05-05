@@ -1,5 +1,6 @@
 package ch.checkbit.sia.activity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import ch.checkbit.sia.R;

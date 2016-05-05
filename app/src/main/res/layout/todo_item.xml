@@ -20,7 +20,7 @@
         android:gravity="center_vertical"
         android:textIsSelectable="false"
         android:text=""
-        android:textSize="18sp" />
+        android:textSize="@dimen/font_size_text" />
 
     <ImageView
         android:id="@+id/todo_type"

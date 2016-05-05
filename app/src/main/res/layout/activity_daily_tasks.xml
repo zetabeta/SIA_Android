@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dashboard_btn_daily_tasks"
-                android:layout_gravity="center"
+                android:theme="@style/ToolbarText"
                 android:id="@+id/daily_tasks_title" />
 
         </android.support.v7.widget.Toolbar>

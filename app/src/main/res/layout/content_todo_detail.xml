@@ -42,13 +42,15 @@
                 android:layout_width="10dp"
                 android:layout_height="0dp" />
 
+            <!-- TODO title -->
             <TextView
                 android:id="@+id/todo_detail_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/todo_detail_type_icon"
                 android:text="@string/description"
-                android:textSize="24dp" />
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/font_size_title" />
 
         </android.support.v7.widget.LinearLayoutCompat>
 
@@ -56,24 +58,41 @@
             android:layout_width="30dp"
             android:layout_height="10dp" />
 
+        <!-- TODO timestamp -->
         <TextView
             android:id="@+id/todo_detail_create_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="23.02.2016 01:40am"
-            android:textSize="14dp" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_size_text_small" />
 
 
         <android.support.v4.widget.Space
             android:layout_width="30dp"
-            android:layout_height="20dp" />
+            android:layout_height="40dp" />
 
+
+        <!-- TODO notes -->
         <TextView
             android:id="@+id/todo_detail_notes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/notes_here"
-            android:textSize="14sp" />
+            android:textSize="@dimen/font_size_text_small"
+            android:textIsSelectable="true"
+            android:layout_marginBottom="10sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:id="@+id/divider"
+            android:layout_below="@+id/todo_detail_create_date"
+            android:layout_height="1dip"
+            android:background="@color/colorPrimary" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="30dp"
+            android:layout_height="10dp" />
 
         <android.support.v7.widget.LinearLayoutCompat
             android:id="@+id/todo_detail_buttons_layout"

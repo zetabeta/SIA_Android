@@ -20,7 +20,6 @@ public class SiaAbstractActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(toolbarResId);
         toolbar.setTitle("");
         TextView toolbarTitle = (TextView) findViewById(toolbarTextResId);
-        toolbarTitle.setTextSize(20);
         toolbarTitle.setAllCaps(true);
         toolbar.setLogo(iconResource);
         setSupportActionBar(toolbar);

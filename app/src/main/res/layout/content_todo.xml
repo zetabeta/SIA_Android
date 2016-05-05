@@ -19,7 +19,7 @@
         android:minWidth="200dp"
         android:layout_gravity="top"
         android:layout_alignParentRight="true"
-        android:textSize="16sp"
+        android:textSize="@dimen/font_size_controls"
         android:id="@+id/todo_archive_mode"
         android:textColor="@color/colorAccent"
         android:padding="10dp"

@@ -20,10 +20,10 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
             <TextView
+                android:theme="@style/ToolbarText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/add_new_todo"
-                android:layout_gravity="center"
                 android:id="@+id/add_todo_title" />
 
         </android.support.v7.widget.Toolbar>
