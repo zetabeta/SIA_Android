@@ -22,12 +22,14 @@
     <string name="notes_here">Notes come here...</string>
 
 
-
     <string name="dashboard_btn_charisma_quests">Charisma Quests</string>
     <string name="dashboard_btn_todos">TODOs</string>
     <string name="dashboard_btn_voice_exercises">Voice Exercises</string>
     <string name="dashboard_btn_daily_tasks">Daily Tasks</string>
     <string name="dashboard_btn_superpowers">Superpowers</string>
     <string name="dashboard_btn_future">Future</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
