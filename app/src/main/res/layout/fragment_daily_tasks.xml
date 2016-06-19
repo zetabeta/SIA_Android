@@ -5,10 +5,166 @@
     tools:context="ch.checkbit.sia.activity.DailyTasksFragment">
 
 
-    <TextView
-        android:id="@+id/selectedDate"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="" />
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/selectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/colorAccent"
+            android:layout_centerHorizontal="true"
+            android:text="" />
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:id="@+id/divider"
+            android:background="@color/colorPrimary"
+            android:layout_below="@id/selectedDate"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/daily_tasks_table"
+            android:layout_below="@id/divider"
+            android:layout_marginTop="20dp">
+
+            <!-- HATE Tasks -->
+            <TableRow
+                android:layout_width="match_parent">
+                <CheckBox
+                    android:id="@+id/hate_checkbox"
+                    android:enabled="false" />
+
+                <TextView
+                    android:id="@+id/hate"
+                    android:layout_width="match_parent"
+                    android:text="Hate:" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent">
+                <AutoCompleteTextView
+                    android:id="@+id/hate_item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"/>
+
+
+            </TableRow>
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="@color/colorPrimary" />
+
+            <!-- FUTURE Tasks -->
+            <TableRow
+                android:layout_width="match_parent">
+                <CheckBox
+                    android:id="@+id/future_checkbox"
+                    android:enabled="false" />
+
+                <TextView
+                    android:id="@+id/future"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Future:"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent">
+                <AutoCompleteTextView
+                    android:id="@+id/future_item1"
+                    android:layout_width="wrap_content"
+                    android:background="@android:color/transparent"/>
+            </TableRow>
+
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="@color/colorPrimary" />
+
+            <!-- LEARNING Tasks -->
+            <TableRow>
+                <CheckBox
+                    android:id="@+id/learning_checkbox"
+                    android:enabled="false" />
+                <TextView
+                    android:id="@+id/learning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Learning:" />
+            </TableRow>
+
+            <TableRow>
+                <AutoCompleteTextView
+                    android:id="@+id/learning_item1"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/transparent"/>
+            </TableRow>
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="@color/colorPrimary" />
+
+
+            <!-- HEALTH Tasks -->
+            <TableRow>
+                <CheckBox
+                    android:id="@+id/health_checkbox"
+                    android:enabled="false" />
+                <TextView
+                    android:id="@+id/health"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Health:" />
+            </TableRow>
+
+            <TableRow>
+                <AutoCompleteTextView
+                    android:id="@+id/health_item1"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/transparent"/>
+            </TableRow>
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="@color/colorPrimary" />
+
+
+            <!-- FUN Tasks -->
+            <TableRow>
+                <CheckBox
+                    android:id="@+id/fun_checkbox"
+                    android:enabled="false" />
+                <TextView
+                    android:id="@+id/fun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fun:" />
+            </TableRow>
+
+            <TableRow>
+                <AutoCompleteTextView
+                    android:id="@+id/fun_item1"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/transparent"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
 </FrameLayout>
