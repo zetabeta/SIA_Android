@@ -18,6 +18,13 @@
             android:layout_centerHorizontal="true"
             android:text="" />
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/save"
+            android:backgroundTint="@color/colorAccent"
+            android:src="@android:drawable/ic_menu_save" />
 
 
         <View
@@ -25,7 +32,7 @@
             android:layout_height="1dip"
             android:id="@+id/divider"
             android:background="@color/colorPrimary"
-            android:layout_below="@id/selectedDate"/>
+            android:layout_below="@id/save"/>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -53,7 +60,7 @@
                     android:id="@+id/hate_item1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent" />
 
 
             </TableRow>
